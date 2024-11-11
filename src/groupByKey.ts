@@ -11,7 +11,7 @@ export function groupByKey<T extends object>(
   items.forEach((element) => {
     const stringKey = String(element[key]);
 
-    if (Object.hasOwn(result, stringKey)) {
+    if (Object.prototype.hasOwnProperty.call(result, stringKey)) {
       result[stringKey].push(element);
     } else {
       result[stringKey] = [element];
